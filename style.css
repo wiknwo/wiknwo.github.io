@@ -130,19 +130,19 @@ header.sticky ul li a
     font-weight: 600;
     font-size: 30px;
 }
-/*
+
 .content
 {
-    display: flex
+    display: flex;
     justify-content: space-between;
 }
-*/
-/*
+
+
 .contentBx
 {
     padding-right: 30px
 }
-*/
+
 .contentBx h3
 {
     font-size: 24px;
@@ -152,12 +152,12 @@ header.sticky ul li a
 {
     min-width: 50%;
 }
-/*
+
 img
 {
     max-width: 100%;
 }
-*/
+
 .articles
 {
     background: #111
@@ -203,14 +203,26 @@ img
 }
 .poetry .content
 {
-    display: flex;
+    /* display: flex;
     justify-content: space-between;
+    flex-wrap: wrap; */
+
+    display: flex;
+    justify-content: center;
     flex-wrap: wrap;
+    flex-direction: row;
 }
 .poetry .content .poetryBx
 {
-    width: 50%;
-    padding: 20px;
+    /* width: 50%;
+    padding: 20px; */
+    padding: 40px 20px;
+    background: #222;
+    color: #fff;
+    max-width: 1050px;
+    margin: 20px;
+    text-align: center;
+    transition: 0.5s
 }
 /*
 .poetry .content .poetryBx img
@@ -221,7 +233,10 @@ img
 .blog
 {
     background: #f7f7f7;
-
+}
+.blog h2
+{
+    padding: 10px;
 }
 .blog .content
 {
