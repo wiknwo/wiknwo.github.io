@@ -183,6 +183,10 @@ img
     text-align: center;
     transition: 0.5s
 }
+.articles ul 
+{
+    list-style: none; /* Remove previous styling */
+}
 .articles ul li::before
 {
     content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
@@ -191,6 +195,7 @@ img
     display: inline-block; /* Needed to add space between the bullet and the text */
     width: 1em; /* Also needed for space (tweak if needed) */
     margin-left: -1em; /* Also needed for space (tweak if needed) */
+    padding: 5px 0px;
 }
 /*
 .articles .content .articlesBx:hover
