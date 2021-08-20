@@ -162,6 +162,54 @@ img
     max-width: 100%;
 }
 
+/*Technologies*/
+.technologies
+{
+    background: #111;
+}
+
+.heading.white
+{
+    color: #fff;
+}
+
+.technologies .content
+{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.technologies .content .technologiesBx
+{
+    padding: 40px 20px;
+    background: #222;
+    color: #fff;
+    max-width: 340px;
+    margin: 20px;
+    text-align: center;
+    transition: 0.5s;
+}
+
+.technologies .content .technologiesBx:hover
+{
+    background: #2196f3;
+}
+
+.technologies .content .technologiesBx img
+{
+    max-width: 80px;
+    filter: invert(1);
+}
+
+.technologies .content .technologiesBx h2
+{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/*Articles*/
 .articles
 {
     background: #111
@@ -337,7 +385,7 @@ img
     {
         width: 40px;
         height: 40px;
-        background: url(menu.png);
+        background: url(./icons/menu.png);
         background-position: center;
         background-repeat: no-repeat;
         background-size: 30px;
@@ -345,7 +393,7 @@ img
     }
     .toggle.active
     {
-        background: url(close.png);
+        background: url(./icons/close.png);
         background-position: center;
         background-repeat: no-repeat;
         background-size: 25px;
