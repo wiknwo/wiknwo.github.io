@@ -209,6 +209,17 @@ img
     font-weight: 600;
 }
 
+.technologies .content table
+{
+    width: 100%;
+    color: white;
+}
+
+.technologies .content table, th, td
+{
+    border: 1px solid white;
+}
+
 /*Articles*/
 .articles
 {
