@@ -232,12 +232,12 @@ img
     color: #fff;
     max-width: 1050px;
     margin: 20px;
-    text-align: center;
+    text-align: left;
     transition: 0.5s
 }
 .articles ul 
 {
-    list-style: none; /* Remove previous styling */
+    list-style: none; 
 }
 .articles ul li::before
 {
@@ -248,6 +248,7 @@ img
     width: 1em; /* Also needed for space (tweak if needed) */
     margin-left: -1em; /* Also needed for space (tweak if needed) */
     padding: 5px 0px;
+    padding-left: 20px;
 }
 /*
 .articles .content .articlesBx:hover
@@ -267,6 +268,7 @@ img
     font-size: 20px;
     font-weight: 600;
 }
+/* Poetry */
 .poetry .content
 {
     /* display: flex;
