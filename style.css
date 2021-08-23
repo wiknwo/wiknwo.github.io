@@ -352,6 +352,10 @@ img
     font-weight: 400;
 
 }
+.studentBx ul li
+{
+    padding: 5px 0px;
+}
 .copyright
 {
     background: 000;
