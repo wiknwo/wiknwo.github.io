@@ -279,6 +279,16 @@ img
     font-size: 20px;
     font-weight: 600;
 }
+/*Learning*/
+.learningBx ul li
+{
+    padding: 5px 0px;
+}
+
+.learningBx i
+{
+    padding-right: 3px;
+}
 /* Poetry */
 .poetry .content
 {
