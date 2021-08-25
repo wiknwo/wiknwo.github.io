@@ -319,6 +319,18 @@ img
     max-width: 100%;
 }
 */
+/*People*/
+.people .content table
+{
+    width: 100%;
+    color: black;
+}
+
+.people .content table, th, td
+{
+    border: 1px solid black;
+}
+/*Blog*/
 .blog
 {
     background: #f7f7f7;
