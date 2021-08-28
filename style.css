@@ -284,7 +284,6 @@ img
 {
     padding: 5px 0px;
 }
-
 .learningBx i
 {
     padding-right: 3px;
@@ -324,6 +323,14 @@ img
 {
     width: 100%;
     color: black;
+}
+
+.people .content
+{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
 }
 
 .people .content table, th, td
