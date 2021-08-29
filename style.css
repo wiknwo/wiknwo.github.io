@@ -385,6 +385,14 @@ img
 {
     padding: 5px 0px;
 }
+/*Connect*/
+.connect .content
+{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
 .copyright
 {
     background: 000;
