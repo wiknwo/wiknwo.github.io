@@ -56,7 +56,6 @@ header nav ul li a:hover
 {
     color: aqua;
 } 
-
 .sticky
 {
     background-color: rgb(255, 253, 208);
@@ -70,201 +69,15 @@ header nav ul li a:hover
     margin-bottom: 30px;
     color: #111
 }
-.heading h2
-{
-    font-weight: 600;
-    font-size: 30px;
-}
 .content
 {
     display: flex;
     justify-content: center;
 }
-.contentBx
-{
-    padding-right: 30px
-}
-.contentBx h3
-{
-    font-size: 24px;
-    margin-bottom: 10px;
-} 
-.w50
-{
-    min-width: 50%;
-}
 img
 {
     max-width: 100%;
 }
-
-/*Technologies*/
-.technologies
-{
-    background: #111;
-}
-.technologies .content
-{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    flex-direction: row;
-}
-
-.technologies .content .technologiesBx
-{
-    padding: 40px 20px;
-    background: #222;
-    color: #fff;
-    max-width: 340px;
-    margin: 20px;
-    text-align: center;
-    transition: 0.5s;
-}
-
-.technologies .content .technologiesBx:hover
-{
-    background: #2196f3;
-}
-
-.technologies .content .technologiesBx img
-{
-    max-width: 80px;
-    filter: invert(1);
-}
-
-.technologies .content .technologiesBx h2
-{
-    font-size: 20px;
-    font-weight: 600;
-}
-
-.technologies .content table
-{
-    width: 100%;
-    color: white;
-}
-
-.technologies .content table, th, td
-{
-    border: 1px solid white;
-}
-
-/*Articles*/
-.articles
-{
-    background: #111
-}
-.heading.white
-{
-    color: #fff
-}
-.articles .content
-{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    flex-direction: row;
-}
-.articles .content .articlesBx
-{
-    padding: 40px 20px;
-    background: #222;
-    color: #fff;
-    max-width: 1050px;
-    margin: 20px;
-    text-align: left;
-    transition: 0.5s
-}
-.articles ul 
-{
-    list-style: none; 
-}
-.articles ul li::before
-{
-    content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
-    color: white; /* Change the color */
-    font-weight: bold; /* If you want it to be bold */
-    display: inline-block; /* Needed to add space between the bullet and the text */
-    width: 1em; /* Also needed for space (tweak if needed) */
-    margin-left: -1em; /* Also needed for space (tweak if needed) */
-    padding: 5px 0px;
-    padding-left: 20px;
-}
-/*
-.articles .content .articlesBx:hover
-{
-    background: #2196f3;
-}
-*/
-/*
-.articles .content .articlesBx img
-{
-    max-width: 80px;
-    filter: invert(1);
-}
-*/
-.articles .content .articlesBx h2
-{
-    font-size: 20px;
-    font-weight: 600;
-}
-/*Learning*/
-.learningBx ul li
-{
-    padding: 5px 0px;
-}
-.learningBx i
-{
-    padding-right: 3px;
-}
-/* Poetry */
-.poetry .content
-{
-    /* display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap; */
-
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    flex-direction: row;
-}
-.poetry .content .poetryBx
-{
-    /* width: 50%;
-    padding: 20px; */
-    padding: 40px 20px;
-    background: #222;
-    color: #fff;
-    max-width: 1050px;
-    margin: 20px;
-    text-align: center;
-    transition: 0.5s
-}
-.people .content table
-{
-    width: 100%;
-    color: black;
-}
-
-.people .content
-{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    flex-direction: row;
-}
-
-.people .content table, th, td
-{
-    border: 1px solid black;
-}
-.studentBx ul li
-{
-    padding: 5px 0px;
-}
-/*Connect*/
 .connect .content 
 {
     display: flex;
@@ -286,7 +99,8 @@ img
     text-align: center;
     font-size: 10px;
 }
-/*Responsive*/
+
+/* Responsive layout for other devices */
 @media (max-width: 900px)
 {
     header, .sticky
@@ -302,7 +116,8 @@ img
     {
         padding: 25px;
     }
-    .heading h2{
+    .heading h2
+    {
         font-weight: 600;
         font-size: 24px;
     }
@@ -310,7 +125,8 @@ img
     {
         flex-direction: column;
     }
-    .connect .content ul {
+    .connect .content ul 
+    {
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
