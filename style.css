@@ -16,7 +16,7 @@ header
     justify-content: space-between;
     align-items: center;
     position: fixed;
-    top: 0;
+    top: 0px;
     width: 100%;
     transition: 0.5s;
     z-index: 1000;
@@ -26,7 +26,7 @@ header .home
     color: orange;
     font-size: 25px;
     text-decoration: none;
-    font-weight: 700;
+    font-weight: 700px;
 }
 header a
 {
