@@ -73,26 +73,27 @@ header nav ul li a:hover
 {
     display: flex;
     justify-content: center;
+    text-align: center;
 }
 img
 {
     max-width: 100%;
 }
-.connect .content 
+#connect .content 
 {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     flex-direction: row;
-    white-space: nowrap;
+    white-space: nowrap;;
 }
-.connect ul li
+#connect ul li
 {
     list-style: none;
     display: inline;
     margin-inline: 2px;
 }
-.copyright
+#copyright
 {
     background: 000;
     color: #000;
@@ -125,7 +126,7 @@ img
     {
         flex-direction: column;
     }
-    .connect .content ul 
+    #connect .content ul 
     {
         display: flex;
         justify-content: center;
