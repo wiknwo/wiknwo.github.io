@@ -78,13 +78,194 @@
             </div>
         </section>
 
+        <section id="quotes" style="text-align: right; color: black; font-size: 10px;">
+            <i><p id="quote-text"></p></i>
+            <i><p id="quote-author"></p></i>
+        </section>
+          
         <p id="copyright">wiknwo</p>
 
         <script>
             window.addEventListener('scroll', function() {
+                // Function to create sticky header on main web page
                 console.log("Scroll event trigerred");
                 var header = document.querySelector('header');
                 header.classList.toggle('sticky', window.scrollY > 0);
+            });
+
+            // Reading Quotes JSON into a JS object
+            let currentQuoteIndex = 0;
+            const quotes = [
+                [
+                    'Start by doing what is necessary; then do what is possible; and suddenly you are doing the impossible',
+                    'St. Francis of Assisi'
+                ],
+                [ 'Be present', '' ],
+                [ 'Focus', '' ],
+                [ 'Clarity', '' ],
+                [ 'Meditate on the Word', 'The Bible' ],
+                [ "Don't go out of your way", '' ],
+                [ 'Slow down', '' ],
+                [
+                    'Education is the most important thing you can do for yourself or someone else',
+                    ''
+                ],
+                [ 'Get your experience; be well-rounded', '' ],
+                [ "Never ever rush anything; it's unnecessary every time", '' ],
+                [
+                    "In life, nothing is ever wasted as you can reap what you've sown today, decades later and so on",
+                    ''
+                ],
+                [ 'Keep your face neutral and stop talking to yourself aloud', '' ],
+                [
+                    "Don't take unnecessary risk and minimize risks if they are unavoidable",
+                    ''
+                ],
+                [ "Don't do unnecessary things", '' ],
+                [
+                    'Don’t make any assumptions, challenge everything; even if you think everything is fine for you, consider what position others are in based on that assumption',
+                    ''
+                ],
+                [ 'Pick up your jacket', 'Jackie Chan' ],
+                [ 'You reap what you sow Artem', 'Khan' ],
+                [ 'Gardening and Farming and Library', '' ],
+                [ 'Do good, say nothing', '' ],
+                [ 'Less is more', '' ],
+                [ 'DIY', '' ],
+                [
+                    'Be vigilant and set boundaries and enforce them at multiple levels',
+                    ''
+                ],
+                [
+                    'Let any object you use be an extension of yourself in every way',
+                    ''
+                ],
+                [ "If you don't get it, forget about it", '' ],
+                [ 'Let them keep thinking that', '' ],
+                [ "it's better for people to find out instead of be told", '' ],
+                [ "Don't say or tell anybody anything, just do it instead", '' ],
+                [
+                    "Don't bring someone else or their problems with you to where you are going; leave them all where they belong, in the rear view mirror; Don't give anybody free real estate",
+                    ''
+                ],
+                [
+                    'Things only matter as much as you want them to, something can be consequential or inconsequential all based on your attention and perspective on it',
+                    ''
+                ],
+                [ 'Move at your own pace and do things when you are ready', '' ],
+                [
+                    "You can't help somebody until you help yourself then they help themself and finally you can help each other",
+                    ''
+                ],
+                [ 'Discover', '' ],
+                [ 'Know better, do better', '' ],
+                [
+                    'Nobody else knows, you have the best vantage point about your life, i.e., do your thing 🐯🐲',
+                    ''
+                ],
+                [
+                    "People can't help you so figure it out for yourself, e.g. Gon Freecs",
+                    ''
+                ],
+                [ 'Fuck the noise', '' ],
+                [ 'Channel your astral projection via your outlet', '' ],
+                [ 'Express yourself', '' ],
+                [
+                    'Be unlimited, boundless, formless, never out of context, infinite...',
+                    ''
+                ],
+                [ 'Variety is the spice of life', '' ],
+                [ 'Max 3 word sentences in 2024', '' ],
+                [ "Don't go out of your way", '' ],
+                [ 'In social settings, shut up', '' ],
+                [ 'Take 1 step back from your intention and do that instead', '' ],
+                [ 'Take it easy', '' ],
+                [ "Ensure you're talking to the right person", '' ],
+                [ "Ensure you know 'what' you're paying that price for", '' ],
+                [ "It's the journey not the destination", '' ],
+                [ 'Stop listening', '' ],
+                [ 'Stop thinking', '' ],
+                [ 'Stop asking people questions', '' ],
+                [ 'People are terrible', '' ],
+                [ 'Tune out, tap in', '' ],
+                [
+                    'Every time you step in you step out, every time you step out you step in',
+                    ''
+                ],
+                [ 'Open it', '' ],
+                [ 'Protect your peace', '' ],
+                [
+                    'Embrace clarity in social interactions by preventing routes down unnecessary paths of conversation and discussion',
+                    ''
+                ],
+                [
+                    "You don't need to convince anybody; what are you trying to prove and to who?",
+                    ''
+                ],
+                [ 'No more explaining', '' ],
+                [ 'Create distance between...', '' ],
+                [ 'Maintain perspective', '' ],
+                [
+                    'Have your happy place where you are at peace and in your element; in the pocket',
+                    ''
+                ],
+                [ 'Fulfil your destiny', '' ],
+                [ 'Realize your potential', '' ],
+                [
+                    'Blaze your trail, make up your own mind, chart your own course, find out for yourself, figure it out for yourself',
+                    ''
+                ],
+                [ 'Alignment, Rhythm, Energy, Vibe, Refinement, Resonance', '' ]
+            ]
+
+            function displayQuote() {
+                // Function to display the current quote
+                const quoteElement = document.getElementById('quote-text');
+                const authorElement = document.getElementById('quote-author');
+                quoteElement.textContent = quotes[currentQuoteIndex][0];
+                authorElement.textContent = quotes[currentQuoteIndex][1];
+            }
+
+            // =====================================
+
+            function getLastUpdateTime() {
+                return localStorage.getItem('lastQuoteUpdateTime') || '0';
+            }
+
+            function setLastUpdateTime() {
+                localStorage.setItem('lastQuoteUpdateTime', Date.now().toString());
+            }
+
+            function check24HoursPassed() {
+                const lastUpdate = parseInt(getLastUpdateTime());
+                const currentTime = Date.now();
+                const hoursPassed = (currentTime - lastUpdate) / (1000 * 60 * 60);
+                return hoursPassed >= 24;
+            }
+
+            function updateQuote() {
+                if (check24HoursPassed()) {
+                    // Increment the quote index
+                    currentQuoteIndex += 1;
+                    // Circle back the quote array if the end is reached
+                    if (currentQuoteIndex == quotes.length) {
+                        currentQuoteIndex = currentQuoteIndex % quotes.length;
+                    }
+                    // Display the new quote
+                    displayQuote();
+                    setLastUpdateTime();
+                } else {
+                    displayQuote();
+                }
+            }
+
+            // =====================================
+
+            document.addEventListener('DOMContentLoaded', function() {
+                // Initialize the quotes display
+                updateQuote();
+                // console.log("Current Quote Index: ", currentQuoteIndex);
+                // console.log("Last Update Time: ", getLastUpdateTime());
             });
         </script>
     </body>
