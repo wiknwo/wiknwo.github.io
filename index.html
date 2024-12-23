@@ -239,31 +239,27 @@
             function check24HoursPassed() {
                 const lastUpdate = parseInt(getLastUpdateTime());
                 const currentTime = Date.now();
-                const hoursPassed = (currentTime - lastUpdate) / (1000 * 60 * 60);
+                const hoursPassed = Math.floor((currentTime - lastUpdate) / (1000 * 60 * 60 * 24));
+                // console.log("Hours Passed: ", hoursPassed);
                 return hoursPassed >= 24;
             }
 
-            function updateQuote() {
-                if (check24HoursPassed()) {
-                    // Increment the quote index
-                    currentQuoteIndex += 1;
-                    // Circle back the quote array if the end is reached
-                    if (currentQuoteIndex == quotes.length) {
-                        currentQuoteIndex = currentQuoteIndex % quotes.length;
-                    }
-                    // Display the new quote
-                    displayQuote();
-                    setLastUpdateTime();
-                } else {
-                    displayQuote();
+            function updateQuoteIndex() {
+                // Increment the quote index
+                currentQuoteIndex += 1;
+                // Circle back the quote array if the end is reached
+                if (currentQuoteIndex == quotes.length) {
+                    currentQuoteIndex = currentQuoteIndex % quotes.length;
                 }
+                // Make note of the time this update is occurring
+                setLastUpdateTime();
             }
 
             // =====================================
 
             document.addEventListener('DOMContentLoaded', function() {
-                // Initialize the quotes display
-                updateQuote();
+                if (check24HoursPassed()) updateQuoteIndex();
+                displayQuote();
                 // console.log("Current Quote Index: ", currentQuoteIndex);
                 // console.log("Last Update Time: ", getLastUpdateTime());
             });
