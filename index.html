@@ -253,15 +253,17 @@
                 }
                 // Make note of the time this update is occurring
                 setLastUpdateTime();
+                // console.log("Current Quote Index: ", currentQuoteIndex);
+                // console.log("Last Update Time: ", getLastUpdateTime());
             }
 
             // =====================================
 
             document.addEventListener('DOMContentLoaded', function() {
-                if (check24HoursPassed()) updateQuoteIndex();
+                // Update every 24 hours
+                const twentyFourHoursInMilliseconds = 24 * 60 * 60 * 1000;
+                setInterval(updateQuoteIndex, twentyFourHoursInMilliseconds);
                 displayQuote();
-                // console.log("Current Quote Index: ", currentQuoteIndex);
-                // console.log("Last Update Time: ", getLastUpdateTime());
             });
         </script>
     </body>
