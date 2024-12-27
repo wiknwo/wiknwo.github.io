@@ -21,6 +21,7 @@
                 <ul>
                     <li><a href="#welcome">Welcome</a></li>
                     <li><a href="#connect">Connect</a></li>
+                    <li><a href="https://superficial-track-602.notion.site/Student-82453d07f2e943a1847838594ef0530b" target="_blank">Student</a></li>                    
                     <li><a href="poetry.html" target="_blank">Poetry</a></li>                    
                     <li><a href="netizens.html" target="_blank">Netizens</a></li>                    
                     <li><a href="https://wiknwo.blogspot.com" target="_blank">Blog</a></li>
@@ -215,7 +216,8 @@
                     'Blaze your trail, make up your own mind, chart your own course, find out for yourself, figure it out for yourself',
                     ''
                 ],
-                [ 'Alignment, Rhythm, Energy, Vibe, Refinement, Resonance', '' ]
+                [ 'Alignment, Rhythm, Energy, Vibe, Refinement, Resonance', '' ],
+                [ 'We are in perpetual bloom', '' ]
             ]
 
             function displayQuote() {
@@ -239,9 +241,9 @@
             function check24HoursPassed() {
                 const lastUpdate = parseInt(getLastUpdateTime());
                 const currentTime = Date.now();
-                const hoursPassed = Math.floor((currentTime - lastUpdate) / (1000 * 60 * 60 * 24));
-                // console.log("Hours Passed: ", hoursPassed);
-                return hoursPassed >= 24;
+                const daysPassed = Math.floor((currentTime - lastUpdate) / (1000 * 60 * 60 * 24));
+                // console.log("Days Passed: ", hoursPassed);
+                return hoursPassed >= 1;
             }
 
             function updateQuoteIndex() {
@@ -249,7 +251,7 @@
                 currentQuoteIndex += 1;
                 // Circle back the quote array if the end is reached
                 if (currentQuoteIndex == quotes.length) {
-                    currentQuoteIndex = currentQuoteIndex % quotes.length;
+                    currentQuoteIndex = 0;
                 }
                 // Make note of the time this update is occurring
                 setLastUpdateTime();
@@ -261,8 +263,9 @@
 
             document.addEventListener('DOMContentLoaded', function() {
                 // Update every 24 hours
-                const twentyFourHoursInMilliseconds = 24 * 60 * 60 * 1000;
-                setInterval(updateQuoteIndex, twentyFourHoursInMilliseconds);
+                if (check24HoursPassed()) {
+                    updateQuoteIndex();
+                }
                 displayQuote();
             });
         </script>
