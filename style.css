@@ -40,6 +40,8 @@ header a:hover
 header nav ul
 {
     display: flex;
+    flex-wrap: wrap;
+    white-space: nowrap;
     list-style: none;
     font-size: 18px;
 }
@@ -107,18 +109,11 @@ img
     header, .sticky
     {
         margin: 0;
-        padding: 0px 10px;
         width: 100%;
         display: grid;
         justify-content: center;
         text-align: center;
-        font-size: 14px;
-    }
-    header nav {
-        padding: 0px 10px;
-        margin: 0px;
-        width: 100%;
-        box-sizing: border-box;
+        font-size: 18px;
     }
     section
     {
