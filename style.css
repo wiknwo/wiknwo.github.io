@@ -112,7 +112,13 @@ img
         display: grid;
         justify-content: center;
         text-align: center;
-        font-size: 12px;
+        font-size: 14px;
+    }
+    header nav {
+        padding: 0px 10px;
+        margin: 0px;
+        width: 100%;
+        box-sizing: border-box;
     }
     section
     {
