@@ -112,6 +112,7 @@ img
         display: grid;
         justify-content: center;
         text-align: center;
+        font-size: 12px;
     }
     section
     {
