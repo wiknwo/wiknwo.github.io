@@ -95,7 +95,7 @@
             });
 
             // Reading Quotes JSON into a JS object
-            let currentQuoteIndex = 0;
+            // let currentQuoteIndex = getCurrentQuoteIndex();
             const quotes = [
                 [
                     'Start by doing what is necessary; then do what is possible; and suddenly you are doing the impossible',
@@ -224,11 +224,19 @@
                 // Function to display the current quote
                 const quoteElement = document.getElementById('quote-text');
                 const authorElement = document.getElementById('quote-author');
-                quoteElement.textContent = quotes[currentQuoteIndex][0];
-                authorElement.textContent = quotes[currentQuoteIndex][1];
+                quoteElement.textContent = quotes[getCurrentQuoteIndex()][0];
+                authorElement.textContent = quotes[getCurrentQuoteIndex()][1];
             }
 
             // =====================================
+
+            function getCurrentQuoteIndex() {
+                return parseInt(localStorage.getItem('currentQuoteIndex')) || 0;
+            }
+
+            function setCurrentQuoteIndex(index) {
+                localStorage.setItem('currentQuoteIndex', index.toString());
+            }
 
             function getLastUpdateTime() {
                 return localStorage.getItem('lastQuoteUpdateTime') || '0';
@@ -242,31 +250,37 @@
                 const lastUpdate = parseInt(getLastUpdateTime());
                 const currentTime = Date.now();
                 const daysPassed = Math.floor((currentTime - lastUpdate) / (1000 * 60 * 60 * 24));
-                // console.log("Days Passed: ", hoursPassed);
+                console.log("Days Passed: ", daysPassed); // Testing
                 return daysPassed >= 1;
             }
 
             function updateQuoteIndex() {
+                // Print out the current quote index and last update time for testing
+                console.log("Current Quote Index: ", getCurrentQuoteIndex()); // Testing
+                console.log("Last Update Time: ", getLastUpdateTime()); // Testing
                 // Increment the quote index
-                currentQuoteIndex += 1;
+                setCurrentQuoteIndex(getCurrentQuoteIndex() + 1);
                 // Circle back the quote array if the end is reached
-                if (currentQuoteIndex == quotes.length) {
-                    currentQuoteIndex = 0;
+                if (getCurrentQuoteIndex() >= quotes.length) {
+                    setCurrentQuoteIndex(0);
                 }
                 // Make note of the time this update is occurring
                 setLastUpdateTime();
-                // console.log("Current Quote Index: ", currentQuoteIndex);
-                // console.log("Last Update Time: ", getLastUpdateTime());
+                // Print out the new quote index and new update time for testing
+                console.log("New Quote Index: ", getCurrentQuoteIndex()); //Testing
+                console.log("New Update Time: ", getLastUpdateTime()); // Testing
             }
 
             // =====================================
 
             document.addEventListener('DOMContentLoaded', function() {
+                // Display the current quote
+                displayQuote();
                 // Update every 24 hours
                 if (check24HoursPassed()) {
                     updateQuoteIndex();
+                    displayQuote();
                 }
-                displayQuote();
             });
         </script>
     </body>
